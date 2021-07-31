@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/scratch.wav-f8720c23f61ce84040fc52c563f7eba8.sample"
+
+[deps]
+
+source_file="res://assets/sounds/digital_tools_game/scratch.wav"
+dest_files=[ "res://.import/scratch.wav-f8720c23f61ce84040fc52c563f7eba8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

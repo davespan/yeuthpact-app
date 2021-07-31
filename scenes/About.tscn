@@ -1,0 +1,89 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/fonts/Text.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/main_menu/About.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0 )
+border_width_bottom = 2
+border_color = Color( 0.964706, 0.890196, 0.184314, 1 )
+
+[node name="About" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.0
+margin_bottom = -71.0
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "WHAT [color=yellow]YEUTHPACT [/color]IS
+
+Yeuthpact is the [color=navy]European [/color]project to support youth workers and youth to deliver better impact at local level and to measure it through innovative tools and methodologies.
+Yeuthpact is supported by Erasmus plus and it is the result of the work by [color=lime]Social DNA (Netherlands), Polygonal (Italy), GLaSP (United Kingdom), GoEurope (Spain) and SCAS (Bulgaria)[/color]. 
+
+This app is the result of the engagement of youth workers of Europe to create a gamified tool to reflect on the different aspects of youth work impact while having fun. 
+Visit [url]http://www.yeuthpact.com[/url] to discover more.
+
+WHY THE FIVE DIFFERENT LEVELS?[color=fuchsia]
+- DIGITAL TOOLS
+- FUNDRAISING
+- POLICY, INFLUENCE & IMPACT
+- REACHOUT
+- TRAINING CAPABILITIES[/color]
+
+These different minigames are named after the results of a European questionnaire launched by Yeuthpact partnership in 2020. We asked to youth workers about the main competences needed to improve their local work. And here we are!
+
+HOW DOES THE APP WORK?
+You can play  each minigame by tapping on them on the menu. Inside each minigame  you will find instructions on how to play. It is easy and intuitive! Once certain goals are reached, you will notice that some red lights in the main menu will turn green. Once all the lights are green,  the space rocket will launch and… you will discover a secret key!
+
+WHAT TO DO WITH THE KEY?
+Yeuthpact is much more than a website. Visit [url]https://yeuthpact.scas.bg/[/url], put the secret key in the bonus course and…enjoy our surprise :D"
+text = "WHAT YEUTHPACT IS
+
+Yeuthpact is the European project to support youth workers and youth to deliver better impact at local level and to measure it through innovative tools and methodologies.
+Yeuthpact is supported by Erasmus plus and it is the result of the work by Social DNA (Netherlands), Polygonal (Italy), GLaSP (United Kingdom), GoEurope (Spain) and SCAS (Bulgaria). 
+
+This app is the result of the engagement of youth workers of Europe to create a gamified tool to reflect on the different aspects of youth work impact while having fun. 
+Visit http://www.yeuthpact.com to discover more.
+
+WHY THE FIVE DIFFERENT LEVELS?
+- DIGITAL TOOLS
+- FUNDRAISING
+- POLICY, INFLUENCE & IMPACT
+- REACHOUT
+- TRAINING CAPABILITIES
+
+These different minigames are named after the results of a European questionnaire launched by Yeuthpact partnership in 2020. We asked to youth workers about the main competences needed to improve their local work. And here we are!
+
+HOW DOES THE APP WORK?
+You can play  each minigame by tapping on them on the menu. Inside each minigame  you will find instructions on how to play. It is easy and intuitive! Once certain goals are reached, you will notice that some red lights in the main menu will turn green. Once all the lights are green,  the space rocket will launch and… you will discover a secret key!
+
+WHAT TO DO WITH THE KEY?
+Yeuthpact is much more than a website. Visit https://yeuthpact.scas.bg/, put the secret key in the bonus course and…enjoy our surprise :D"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -138.0
+margin_top = -46.0
+custom_styles/focus = SubResource( 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Back"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="meta_clicked" from="RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/sounds/digital_tools_game/broken_engine.wav" type="AudioStream" id=1]
+[ext_resource path="res://scripts/digital_tools/SmokingEngine.gd" type="Script" id=2]
+
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0.730859 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.503586 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.655629, 1 )
+colors = PoolColorArray( 0.0575986, 0.0575986, 0.0575986, 1, 0.345098, 0.345098, 0.345098, 0.584314, 0.690196, 0.690196, 0.690196, 0.27451 )
+
+[node name="SmokingEngine" type="TextureRect" groups=[
+"damage",
+]]
+anchor_left = -0.016
+anchor_top = -0.028
+anchor_right = -0.016
+anchor_bottom = -0.028
+margin_left = 0.384001
+margin_top = 0.128
+margin_right = 64.384
+margin_bottom = 64.128
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+show_behind_parent = true
+position = Vector2( 26.6519, 39.3814 )
+rotation = -1.5708
+amount = 100
+lifetime = 2.0
+emission_shape = 2
+emission_rect_extents = Vector2( 5, 18 )
+spread = 0.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 50.0
+angular_velocity = 350.0
+angular_velocity_random = 1.0
+linear_accel = 25.0
+angle = 45.0
+scale_amount = 25.0
+scale_amount_curve = SubResource( 1 )
+color_ramp = SubResource( 2 )
+
+[node name="BrokenEngineSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

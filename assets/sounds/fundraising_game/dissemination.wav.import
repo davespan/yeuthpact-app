@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/dissemination.wav-64f3cdbdf9d8802fc56b267175b5e154.sample"
+
+[deps]
+
+source_file="res://assets/sounds/fundraising_game/dissemination.wav"
+dest_files=[ "res://.import/dissemination.wav-64f3cdbdf9d8802fc56b267175b5e154.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

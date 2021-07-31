@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/jump.wav-01574a568f17fde964f645a9673b3a6d.sample"
+
+[deps]
+
+source_file="res://assets/sounds/fundraising_game/jump.wav"
+dest_files=[ "res://.import/jump.wav-01574a568f17fde964f645a9673b3a6d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

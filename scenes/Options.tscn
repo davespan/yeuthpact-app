@@ -1,0 +1,276 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/fonts/Text.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/main_menu/Options.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/Kenney Future Narrow.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_bottom = 2
+border_color = Color( 0.964706, 0.890196, 0.184314, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 37
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 26
+font_data = ExtResource( 3 )
+
+[node name="Options" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.52588e-05
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -174.801
+margin_top = -59.8711
+margin_right = -78.8007
+margin_bottom = -18.8711
+custom_styles/focus = SubResource( 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Back"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reset" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -759.0
+margin_top = -136.0
+margin_right = -541.0
+margin_bottom = -95.0
+custom_styles/focus = SubResource( 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Reset stats"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_top = 0.2
+anchor_right = 0.05
+anchor_bottom = 1.0
+margin_top = -0.200005
+margin_right = 213.8
+margin_bottom = -127.0
+custom_constants/separation = 23
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+margin_right = 265.0
+margin_bottom = 35.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Policy:"
+align = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+margin_top = 58.0
+margin_right = 265.0
+margin_bottom = 93.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Digital Tools:"
+align = 2
+
+[node name="Label4" type="Label" parent="VBoxContainer"]
+margin_top = 116.0
+margin_right = 265.0
+margin_bottom = 151.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Fundraising:"
+align = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer"]
+margin_top = 174.0
+margin_right = 265.0
+margin_bottom = 209.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Training Cap.:"
+align = 2
+
+[node name="Label6" type="Label" parent="VBoxContainer"]
+margin_top = 232.0
+margin_right = 265.0
+margin_bottom = 267.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Reachout:"
+align = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.2
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -247.0
+margin_top = -0.200005
+margin_right = -37.0
+margin_bottom = -136.0
+custom_constants/separation = 23
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Completed1" type="Label" parent="VBoxContainer2"]
+margin_right = 210.0
+margin_bottom = 35.0
+custom_fonts/font = ExtResource( 1 )
+text = "completed"
+align = 1
+
+[node name="Completed2" type="Label" parent="VBoxContainer2"]
+margin_top = 58.0
+margin_right = 210.0
+margin_bottom = 93.0
+custom_fonts/font = ExtResource( 1 )
+text = "text"
+align = 1
+
+[node name="Completed3" type="Label" parent="VBoxContainer2"]
+margin_top = 116.0
+margin_right = 210.0
+margin_bottom = 151.0
+custom_fonts/font = ExtResource( 1 )
+text = "text"
+align = 1
+
+[node name="Completed4" type="Label" parent="VBoxContainer2"]
+margin_top = 174.0
+margin_right = 210.0
+margin_bottom = 209.0
+custom_fonts/font = ExtResource( 1 )
+text = "text"
+align = 1
+
+[node name="Completed5" type="Label" parent="VBoxContainer2"]
+margin_top = 232.0
+margin_right = 210.0
+margin_bottom = 267.0
+custom_fonts/font = ExtResource( 1 )
+text = "text"
+align = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.2
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -37.0
+margin_top = -0.200005
+margin_right = 110.0
+margin_bottom = -136.0
+custom_constants/separation = 23
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="NA1" type="Label" parent="VBoxContainer3"]
+margin_right = 147.0
+margin_bottom = 35.0
+custom_fonts/font = ExtResource( 1 )
+align = 1
+
+[node name="DTHS" type="Label" parent="VBoxContainer3"]
+margin_top = 58.0
+margin_right = 147.0
+margin_bottom = 93.0
+custom_fonts/font = ExtResource( 1 )
+text = "180"
+align = 1
+
+[node name="FHS" type="Label" parent="VBoxContainer3"]
+margin_top = 116.0
+margin_right = 147.0
+margin_bottom = 151.0
+custom_fonts/font = ExtResource( 1 )
+text = "text"
+align = 1
+
+[node name="TCHS" type="Label" parent="VBoxContainer3"]
+margin_top = 174.0
+margin_right = 147.0
+margin_bottom = 209.0
+custom_fonts/font = ExtResource( 1 )
+text = "text"
+align = 1
+
+[node name="RHS" type="Label" parent="VBoxContainer3"]
+margin_top = 232.0
+margin_right = 147.0
+margin_bottom = 267.0
+custom_fonts/font = ExtResource( 1 )
+text = "text"
+align = 1
+
+[node name="Label" type="Label" parent="."]
+margin_left = 145.792
+margin_top = 19.4647
+margin_right = 425.792
+margin_bottom = 64.4647
+custom_fonts/font = SubResource( 2 )
+text = "Completed?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 439.774
+margin_top = 19.4647
+margin_right = 704.774
+margin_bottom = 64.4647
+custom_fonts/font = SubResource( 2 )
+text = "HighScores"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 803.742
+margin_top = 19.4647
+margin_right = 990.742
+margin_bottom = 49.4647
+custom_fonts/font = SubResource( 3 )
+text = "Sound/Music"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckButton" type="CheckButton" parent="."]
+margin_left = 860.522
+margin_top = 49.4647
+margin_right = 936.522
+margin_bottom = 89.4647
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VSeparator" type="VSeparator" parent="."]
+margin_left = 743.521
+margin_right = 777.521
+margin_bottom = 576.0
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="Reset" to="." method="_on_Reset_pressed"]
+[connection signal="pressed" from="CheckButton" to="." method="_on_CheckButton_pressed"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cannonball.wav-9d58dd10dac8f00c089fbe6895ed7c8d.sample"
+
+[deps]
+
+source_file="res://assets/sounds/policy_game/cannonball.wav"
+dest_files=[ "res://.import/cannonball.wav-9d58dd10dac8f00c089fbe6895ed7c8d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,104 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://scripts/digital_tools/DigitalToolsGame.gd" type="Script" id=1]
+[ext_resource path="res://scenes/mini_games/digital_tools/HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/sounds/digital_tools_game/digital_tools_music.ogg" type="AudioStream" id=3]
+[ext_resource path="res://scenes/mini_games/digital_tools/BrokenLight.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/mini_games/digital_tools/SmokingEngine.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/sprites/digital_tools_game/tire.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/digital_tools_game/car-body.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/digital_tools_game/background.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/digital_tools_game/white_triangle.png" type="Texture" id=9]
+[ext_resource path="res://scenes/mini_games/digital_tools/Tool.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/mini_games/digital_tools/FlatTire.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/mini_games/digital_tools/Scratch.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/sounds/digital_tools_game/correct_tool.ogg" type="AudioStream" id=13]
+[ext_resource path="res://assets/sounds/digital_tools_game/lost.ogg" type="AudioStream" id=14]
+
+
+[node name="DigitalToolGame" type="Node"]
+script = ExtResource( 1 )
+Tool = ExtResource( 10 )
+Damages = [ ExtResource( 5 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 11 ) ]
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -280.0
+margin_top = -264.0
+margin_right = 232.0
+margin_bottom = 24.0
+texture = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HUD" parent="." instance=ExtResource( 2 )]
+
+[node name="SpawnDmgTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Car" type="Sprite" parent="."]
+position = Vector2( 512, 264 )
+texture = ExtResource( 7 )
+
+[node name="LeftTire" type="Sprite" parent="Car"]
+position = Vector2( -229.134, 96 )
+texture = ExtResource( 6 )
+
+[node name="RightTire" type="Sprite" parent="Car"]
+position = Vector2( 220, 96 )
+texture = ExtResource( 6 )
+
+[node name="ToolsPositions" type="Node" parent="."]
+
+[node name="Position1" type="Position2D" parent="ToolsPositions"]
+position = Vector2( 130, 466 )
+
+[node name="Position2" type="Position2D" parent="ToolsPositions"]
+position = Vector2( 338, 466 )
+
+[node name="Position3" type="Position2D" parent="ToolsPositions"]
+position = Vector2( 594, 466 )
+
+[node name="Position4" type="Position2D" parent="ToolsPositions"]
+position = Vector2( 810, 466 )
+
+[node name="HeadLight" type="Light2D" parent="."]
+position = Vector2( 928, 272 )
+scale = Vector2( 0.562014, 0.887272 )
+texture = ExtResource( 9 )
+texture_scale = 1.5
+color = Color( 0.866667, 0.729412, 0.180392, 1 )
+energy = 1.7
+shadow_enabled = true
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -5.0
+
+[node name="DmgPositions" type="Node" parent="."]
+
+[node name="Position0" type="Position2D" parent="DmgPositions"]
+position = Vector2( 712, 184 )
+
+[node name="Position1" type="Position2D" parent="DmgPositions"]
+position = Vector2( 432, 288 )
+
+[node name="Position2" type="Position2D" parent="DmgPositions"]
+position = Vector2( 784, 245 )
+
+[node name="Position3" type="Position2D" parent="DmgPositions"]
+position = Vector2( 252.798, 322.32 )
+
+[node name="CorrectToolSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = 10.0
+
+[node name="LostSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = 3.0
+[connection signal="start_game" from="HUD" to="." method="new_game"]
+[connection signal="timeout" from="SpawnDmgTimer" to="." method="_on_SpawnDmgTimer_timeout"]

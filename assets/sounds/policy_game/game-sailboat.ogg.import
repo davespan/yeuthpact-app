@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/game-sailboat.ogg-24e7eb44c633b91dea38cc66098ee4da.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/policy_game/game-sailboat.ogg"
+dest_files=[ "res://.import/game-sailboat.ogg-24e7eb44c633b91dea38cc66098ee4da.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

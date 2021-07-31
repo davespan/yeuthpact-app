@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/lost.ogg-558a80eb3130a848c410ac7732c93e47.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/digital_tools_game/lost.ogg"
+dest_files=[ "res://.import/lost.ogg-558a80eb3130a848c410ac7732c93e47.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

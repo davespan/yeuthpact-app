@@ -1,0 +1,403 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://assets/sprites/menu/logo-menu.png" type="Texture" id=1]
+[ext_resource path="res://assets/fonts/Kenney Future Narrow.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/icons/about_icon.png" type="Texture" id=3]
+[ext_resource path="res://assets/icons/options_icon.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/menu/space_rocket.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/menu/red_light.png" type="Texture" id=6]
+[ext_resource path="res://scripts/main_menu/MainMenu.gd" type="Script" id=7]
+[ext_resource path="res://assets/sounds/game-title.ogg" type="AudioStream" id=8]
+[ext_resource path="res://assets/sounds/rocket.ogg" type="AudioStream" id=9]
+[ext_resource path="res://assets/icons/power_icon.png" type="Texture" id=10]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_bottom = 2
+border_color = Color( 0.964706, 0.890196, 0.184314, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_bottom = 2
+border_color = Color( 0.964706, 0.890196, 0.184314, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_bottom = 2
+border_color = Color( 0.964706, 0.890196, 0.184314, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_bottom = 2
+border_color = Color( 0.964706, 0.890196, 0.184314, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_bottom = 2
+border_color = Color( 0.964706, 0.890196, 0.184314, 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 35
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=9]
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 212, 155 ), Vector2( 212, 145 ), Vector2( 212, -500 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("LaunchParticles:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("LaunchFX")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 9 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Curve" id=10]
+_data = [ Vector2( 0, 0.518862 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.280123 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=11]
+offsets = PoolRealArray( 0, 0.508621, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 0.878906, 0.481045, 0.0575154, 0.670588, 0.901961, 0.147243, 0.0470588, 0.341176 )
+
+[node name="MainMenu" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 90
+custom_constants/margin_top = 50
+custom_constants/margin_left = 90
+custom_constants/margin_bottom = 50
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 90.0
+margin_top = 50.0
+margin_right = 934.0
+margin_bottom = 526.0
+custom_constants/separation = 0
+
+[node name="VBoxContainerL" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 422.0
+margin_bottom = 476.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Logo" type="TextureRect" parent="HBoxContainer/VBoxContainerL"]
+margin_right = 422.0
+margin_bottom = 150.0
+texture = ExtResource( 1 )
+
+[node name="MenuOptions" type="VBoxContainer" parent="HBoxContainer/VBoxContainerL"]
+margin_top = 154.0
+margin_right = 422.0
+margin_bottom = 476.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 25
+alignment = 1
+
+[node name="PolicyButton" type="Button" parent="HBoxContainer/VBoxContainerL/MenuOptions"]
+margin_top = 8.0
+margin_right = 422.0
+margin_bottom = 49.0
+custom_styles/focus = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+flat = true
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainerL/MenuOptions/PolicyButton"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 3
+text = "Policy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DigitalToolsButton" type="Button" parent="HBoxContainer/VBoxContainerL/MenuOptions"]
+margin_top = 74.0
+margin_right = 422.0
+margin_bottom = 115.0
+custom_styles/focus = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
+flat = true
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainerL/MenuOptions/DigitalToolsButton"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 3
+text = "Digital Tools"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FundraisingButton" type="Button" parent="HBoxContainer/VBoxContainerL/MenuOptions"]
+margin_top = 140.0
+margin_right = 422.0
+margin_bottom = 181.0
+custom_styles/focus = SubResource( 5 )
+custom_fonts/font = SubResource( 2 )
+flat = true
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainerL/MenuOptions/FundraisingButton"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 3
+text = "Fundraising"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TrainingCapabilitiesButton" type="Button" parent="HBoxContainer/VBoxContainerL/MenuOptions"]
+margin_top = 206.0
+margin_right = 422.0
+margin_bottom = 247.0
+custom_styles/focus = SubResource( 6 )
+custom_fonts/font = SubResource( 2 )
+flat = true
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainerL/MenuOptions/TrainingCapabilitiesButton"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 3
+text = "Training Capabilities"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReachoutButton" type="Button" parent="HBoxContainer/VBoxContainerL/MenuOptions"]
+margin_top = 272.0
+margin_right = 422.0
+margin_bottom = 313.0
+custom_styles/focus = SubResource( 7 )
+custom_fonts/font = SubResource( 2 )
+flat = true
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainerL/MenuOptions/ReachoutButton"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 3
+text = "Reachout"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainerR" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 422.0
+margin_right = 844.0
+margin_bottom = 476.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 25
+
+[node name="TopLeftIcons" type="HBoxContainer" parent="HBoxContainer/VBoxContainerR"]
+margin_right = 422.0
+margin_bottom = 50.0
+custom_constants/separation = 25
+alignment = 2
+
+[node name="Exit" type="TextureButton" parent="HBoxContainer/VBoxContainerR/TopLeftIcons"]
+margin_left = 222.0
+margin_right = 272.0
+margin_bottom = 50.0
+texture_normal = ExtResource( 10 )
+
+[node name="About" type="TextureButton" parent="HBoxContainer/VBoxContainerR/TopLeftIcons"]
+margin_left = 297.0
+margin_right = 347.0
+margin_bottom = 50.0
+texture_normal = ExtResource( 3 )
+
+[node name="Options" type="TextureButton" parent="HBoxContainer/VBoxContainerR/TopLeftIcons"]
+margin_left = 372.0
+margin_right = 422.0
+margin_bottom = 50.0
+texture_normal = ExtResource( 4 )
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/VBoxContainerR"]
+margin_top = 75.0
+margin_right = 422.0
+margin_bottom = 387.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SecretCode" type="Label" parent="HBoxContainer/VBoxContainerR/CenterContainer"]
+margin_left = 192.0
+margin_top = 28.0
+margin_right = 230.0
+margin_bottom = 283.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.270588, 0.780392, 0.421936, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 3
+text = " I
+ M
+ P
+ A
+ C
+ T"
+align = 1
+
+[node name="SpaceRocket" type="Sprite" parent="HBoxContainer/VBoxContainerR/CenterContainer"]
+position = Vector2( 212, 155 )
+texture = ExtResource( 5 )
+
+[node name="LaunchAnimation" type="AnimationPlayer" parent="HBoxContainer/VBoxContainerR/CenterContainer/SpaceRocket"]
+anims/Launch = SubResource( 9 )
+
+[node name="LaunchParticles" type="CPUParticles2D" parent="HBoxContainer/VBoxContainerR/CenterContainer/SpaceRocket"]
+show_behind_parent = true
+position = Vector2( -1, 145 )
+emitting = false
+amount = 100
+lifetime = 1.5
+speed_scale = 2.0
+emission_shape = 1
+emission_sphere_radius = 10.0
+spread = 0.0
+angular_velocity = 350.0
+linear_accel = 25.0
+linear_accel_random = 1.0
+angle = 45.0
+scale_amount = 25.0
+scale_amount_curve = SubResource( 10 )
+color_ramp = SubResource( 11 )
+
+[node name="LaunchFX" type="AudioStreamPlayer" parent="HBoxContainer/VBoxContainerR/CenterContainer/SpaceRocket"]
+stream = ExtResource( 9 )
+
+[node name="Lights" type="HBoxContainer" parent="HBoxContainer/VBoxContainerR"]
+margin_top = 412.0
+margin_right = 422.0
+margin_bottom = 476.0
+size_flags_horizontal = 3
+custom_constants/separation = 25
+
+[node name="Light1" type="TextureRect" parent="HBoxContainer/VBoxContainerR/Lights"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 6 )
+
+[node name="Light2" type="TextureRect" parent="HBoxContainer/VBoxContainerR/Lights"]
+margin_left = 89.0
+margin_right = 153.0
+margin_bottom = 64.0
+texture = ExtResource( 6 )
+
+[node name="Light3" type="TextureRect" parent="HBoxContainer/VBoxContainerR/Lights"]
+margin_left = 178.0
+margin_right = 242.0
+margin_bottom = 64.0
+texture = ExtResource( 6 )
+
+[node name="Light4" type="TextureRect" parent="HBoxContainer/VBoxContainerR/Lights"]
+margin_left = 267.0
+margin_right = 331.0
+margin_bottom = 64.0
+texture = ExtResource( 6 )
+
+[node name="Light5" type="TextureRect" parent="HBoxContainer/VBoxContainerR/Lights"]
+margin_left = 356.0
+margin_right = 420.0
+margin_bottom = 64.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StarsParticles" type="CPUParticles2D" parent="."]
+show_behind_parent = true
+position = Vector2( 512, 288 )
+emitting = false
+amount = 100
+lifetime = 2.0
+speed_scale = 0.2
+emission_shape = 2
+emission_rect_extents = Vector2( 512, 288 )
+direction = Vector2( 0, 0 )
+spread = 0.0
+gravity = Vector2( 0, 0 )
+__meta__ = {
+"_editor_description_": "		"
+}
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
+[connection signal="pressed" from="HBoxContainer/VBoxContainerL/MenuOptions/PolicyButton" to="." method="_on_PolicyButton_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainerL/MenuOptions/DigitalToolsButton" to="." method="_on_DigitalToolsButton_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainerL/MenuOptions/FundraisingButton" to="." method="_on_FundraisingButton_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainerL/MenuOptions/TrainingCapabilitiesButton" to="." method="_on_TrainingCapabilitiesButton_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainerL/MenuOptions/ReachoutButton" to="." method="_on_ReachoutButton_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainerR/TopLeftIcons/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainerR/TopLeftIcons/About" to="." method="_on_About_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainerR/TopLeftIcons/Options" to="." method="_on_Options_pressed"]

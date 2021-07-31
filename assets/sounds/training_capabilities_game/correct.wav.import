@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/correct.wav-d5fd56fa438d8108f4a9aa41c13a61fd.sample"
+
+[deps]
+
+source_file="res://assets/sounds/training_capabilities_game/correct.wav"
+dest_files=[ "res://.import/correct.wav-d5fd56fa438d8108f4a9aa41c13a61fd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
