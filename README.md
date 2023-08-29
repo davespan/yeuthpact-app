@@ -1,6 +1,6 @@
 # yeuthpact-app
 
-The [Yeuthpact Erasmus+ project](http://www.yeuthpact.com/) app developed with Godot.
+The Yeuthpact Erasmus+ project app developed with Godot.
 
 ## Download available here:
 
